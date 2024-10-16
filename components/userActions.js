@@ -1,5 +1,6 @@
 import "./userActions.css"
 import edit from "../assets/edit.svg"
+import trash from "../assets/trash.svg"
 
 export const usersActions = () => {
 	const actionsContainer = document.createElement("div")
@@ -7,14 +8,15 @@ export const usersActions = () => {
 
 	const buttonOne = document.createElement("button")
 	buttonOne.classList.add("btn")
-	buttonOne.innerText = "Modify"
+	const deleteImg = new Image()
+	deleteImg.src = trash
+	buttonOne.appendChild(deleteImg)
 
 	const buttonTwo = document.createElement("button")
 	buttonTwo.classList.add("btn")
-	const editImg = document.createElement("img")
+	const editImg = new Image()
 	editImg.src = edit
 	buttonTwo.appendChild(editImg)
-	// buttonTwo.innerText = "Delete"
 
 	actionsContainer.appendChild(buttonOne)
 	actionsContainer.appendChild(buttonTwo)
