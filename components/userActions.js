@@ -1,4 +1,5 @@
 import "./userActions.css"
+import edit from "../assets/edit.svg"
 
 export const usersActions = () => {
 	const actionsContainer = document.createElement("div")
@@ -10,7 +11,10 @@ export const usersActions = () => {
 
 	const buttonTwo = document.createElement("button")
 	buttonTwo.classList.add("btn")
-	buttonTwo.innerText = "Delete"
+	const editImg = document.createElement("img")
+	editImg.src = edit
+	buttonTwo.appendChild(editImg)
+	// buttonTwo.innerText = "Delete"
 
 	actionsContainer.appendChild(buttonOne)
 	actionsContainer.appendChild(buttonTwo)
