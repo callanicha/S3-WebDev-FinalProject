@@ -1,4 +1,5 @@
-
-export const cardComponent = document.createElement("article")
-
-cardComponent.innerText = "hello man whats up !!!"
+export const cardComponent = () => {
+	const card = document.createElement("article")
+	card.innerText = "hello man whats up !!!"
+	return card
+}
