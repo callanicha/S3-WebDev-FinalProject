@@ -7,7 +7,6 @@ export async function fetchUsers() {
 				"x-api-key": import.meta.env.VITE_API_KEY,
 			},
 		}
-
 		const res = await fetch(url, options)
 		if (!res.ok) throw new Error("Error with the connection")
 		const data = await res.json()
