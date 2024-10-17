@@ -1,7 +1,7 @@
 import "./cardImage.css"
 /**
  * @param {string} cardImg // image url to be displayed on the image avatar
- * @returns
+ * @returns {HTMLDivElement}
  */
 
 export const cardImage = (cardImg) => {

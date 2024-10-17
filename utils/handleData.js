@@ -7,8 +7,8 @@ import { usersActions } from "../components/userActions"
 export function handleData(usersArray) {
 	usersArray.forEach((user) => {
 		const cardArticle = cardComponent()
-		cardArticle.appendChild(cardImage())
-		cardArticle.appendChild(usersData())
+		cardArticle.appendChild(cardImage(user.profileImg))
+		cardArticle.appendChild(usersData(user.firstName, user.lastName))
 		cardArticle.appendChild(usersActions())
 
 		app.appendChild(cardArticle)
