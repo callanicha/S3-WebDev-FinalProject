@@ -16,10 +16,12 @@ export const usersActions = () => {
 	return actionsContainer
 }
 
-function buttonOneFn() {
-	console.log("you clicked the first button !!!")
+function buttonOneFn(e) {
+	document.querySelector(".modal-overlay").classList.toggle("show")
+	console.log(e.target);
+	
 }
 
 function buttonTwoFn() {
-	console.log("you clicked the second button !!!")
+	document.querySelector(".modal-overlay").classList.toggle("show")
 }
