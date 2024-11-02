@@ -2,7 +2,6 @@ import "./userActions.css"
 import { actionButton } from "./actionButton "
 import edit from "../assets/edit.svg"
 import trash from "../assets/trash.svg"
-import { updateUser } from "../utils/updateUser"
 import { formComp } from "./formComp"
 
 export const usersActions = () => {
@@ -19,17 +18,30 @@ export const usersActions = () => {
 }
 
 function buttonOneFn(e) {
+	const selectedCard = e.target.parentElement.parentElement
+	const userId = selectedCard.getAttribute("userId")
+	const firstName = selectedCard.getAttribute("firstName")
+	const lastName = selectedCard.getAttribute("lastName")
 	document.querySelector(".modal-overlay").classList.toggle("show")
-	const userId = e.target.parentElement.parentElement.getAttribute("userId")
-	console.log(userId)
 	document.querySelector(".modal-container").innerHTML = ""
-	document.querySelector(".modal-container").appendChild(formComp())
-	updateUser(userId)
+	document.querySelector(".modal-title").innerText = "Edit user"
+	document
+		.querySelector(".modal-container")
+		.appendChild(formComp(firstName, lastName, userId))
 }
 
 function buttonTwoFn(e) {
+	const selectedCard = e.target.parentElement.parentElement
+	const userId = selectedCard.getAttribute("userId")
 	document.querySelector(".modal-overlay").classList.toggle("show")
-	const userId = e.target.parentElement.parentElement.getAttribute("userId")
 	document.querySelector(".modal-container").innerHTML = ""
+	document.querySelector(".modal-title").innerText = "Warning !"
+	document.querySelector(".modal-container").innerText = "You sure ?"
+
+	const confirmBtn = document.createElement("button")
+	confirmBtn.style.backgroundColor = "#d5384f"
+	confirmBtn.innerText = "Confirm"
+	document.querySelector(".modal-container").appendChild(confirmBtn)
+
 	console.log(userId)
 }

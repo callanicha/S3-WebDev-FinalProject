@@ -1,6 +1,6 @@
 import "./modalComp.css"
 
-export const modalComp = () => {
+export const modalComp = (titleText) => {
 	const modalOverLay = document.createElement("div")
 	modalOverLay.classList.add("modal-overlay")
 	modalOverLay.addEventListener("click", (e) => {
@@ -16,7 +16,8 @@ export const modalComp = () => {
 
 	const modalHeader = document.createElement("header")
 	const modalTitle = document.createElement("h2")
-	modalTitle.innerText = "Title test"
+	modalTitle.classList.add("modal-title")
+	modalTitle.innerText = titleText || "Modal title"
 
 	const closeBtn = document.createElement("button")
 	closeBtn.classList.add("btn-close")
