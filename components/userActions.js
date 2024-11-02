@@ -2,6 +2,7 @@ import "./userActions.css"
 import { actionButton } from "./actionButton "
 import edit from "../assets/edit.svg"
 import trash from "../assets/trash.svg"
+import { updateUser } from "../utils/updateUser"
 
 export const usersActions = () => {
 	const actionsContainer = document.createElement("div")
@@ -16,10 +17,15 @@ export const usersActions = () => {
 	return actionsContainer
 }
 
-function buttonOneFn() {
+function buttonOneFn(e) {
 	document.querySelector(".modal-overlay").classList.toggle("show")
+	const userId = e.target.parentElement.parentElement.getAttribute("userId")
+	console.log(userId)
+	updateUser(userId)
 }
 
-function buttonTwoFn() {
+function buttonTwoFn(e) {
 	document.querySelector(".modal-overlay").classList.toggle("show")
+	const userId = e.target.parentElement.parentElement.getAttribute("userId")
+	console.log(userId)
 }

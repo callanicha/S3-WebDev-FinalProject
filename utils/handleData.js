@@ -6,8 +6,6 @@ import { usersActions } from "../components/userActions"
 
 export function handleData(usersArray) {
 	usersArray.forEach((user) => {
-		console.log(user)
-
 		const cardArticle = cardComponent()
 		cardArticle.setAttribute("userId", user.id)
 		cardArticle.appendChild(cardImage(user.profileImg))
