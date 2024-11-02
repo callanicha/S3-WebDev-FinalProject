@@ -30,5 +30,6 @@ function buttonOneFn(e) {
 function buttonTwoFn(e) {
 	document.querySelector(".modal-overlay").classList.toggle("show")
 	const userId = e.target.parentElement.parentElement.getAttribute("userId")
+	document.querySelector(".modal-container").innerHTML = ""
 	console.log(userId)
 }
