@@ -16,7 +16,7 @@ export const usersActions = () => {
 	return actionsContainer
 }
 
-function buttonOneFn(e) {
+function buttonOneFn() {
 	document.querySelector(".modal-overlay").classList.toggle("show")
 }
 
