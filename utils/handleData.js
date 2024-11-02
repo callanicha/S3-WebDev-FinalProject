@@ -9,7 +9,7 @@ export function handleData(usersArray) {
 		console.log(user)
 
 		const cardArticle = cardComponent()
-		cardArticle.setAttribute("userId", "test")
+		cardArticle.setAttribute("userId", user.id)
 		cardArticle.appendChild(cardImage(user.profileImg))
 		cardArticle.appendChild(usersData(user.firstName, user.lastName))
 		cardArticle.appendChild(usersActions())
