@@ -18,8 +18,6 @@ export const usersActions = () => {
 
 function buttonOneFn(e) {
 	document.querySelector(".modal-overlay").classList.toggle("show")
-	console.log(e.target);
-	
 }
 
 function buttonTwoFn() {

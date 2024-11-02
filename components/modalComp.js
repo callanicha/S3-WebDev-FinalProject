@@ -4,7 +4,6 @@ export const modalComp = () => {
 	const modalOverLay = document.createElement("div")
 	modalOverLay.classList.add("modal-overlay")
 	modalOverLay.addEventListener("click", (e) => {
-		console.log(e.target)
 		if (e.target.classList.contains("modal-overlay")) {
 			modalOverLay.classList.remove("show")
 		}
