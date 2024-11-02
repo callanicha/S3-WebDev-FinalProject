@@ -3,6 +3,7 @@ import { actionButton } from "./actionButton "
 import edit from "../assets/edit.svg"
 import trash from "../assets/trash.svg"
 import { updateUser } from "../utils/updateUser"
+import { formComp } from "./formComp"
 
 export const usersActions = () => {
 	const actionsContainer = document.createElement("div")
@@ -21,6 +22,8 @@ function buttonOneFn(e) {
 	document.querySelector(".modal-overlay").classList.toggle("show")
 	const userId = e.target.parentElement.parentElement.getAttribute("userId")
 	console.log(userId)
+	document.querySelector(".modal-container").innerHTML = ""
+	document.querySelector(".modal-container").appendChild(formComp())
 	updateUser(userId)
 }
 
