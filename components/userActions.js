@@ -3,6 +3,8 @@ import { actionButton } from "./actionButton "
 import edit from "../assets/edit.svg"
 import trash from "../assets/trash.svg"
 import { formComp } from "./formComp"
+import { deleteUser } from "../utils/deleteUser"
+import { init } from "../main"
 
 export const usersActions = () => {
 	const actionsContainer = document.createElement("div")
@@ -36,12 +38,17 @@ function buttonTwoFn(e) {
 	document.querySelector(".modal-overlay").classList.toggle("show")
 	document.querySelector(".modal-container").innerHTML = ""
 	document.querySelector(".modal-title").innerText = "Warning !"
-	document.querySelector(".modal-container").innerText = "You sure ?"
+	document.querySelector(".modal-container").innerText =
+		"Confirm delete user? You sure ?"
 
 	const confirmBtn = document.createElement("button")
 	confirmBtn.style.backgroundColor = "#d5384f"
 	confirmBtn.innerText = "Confirm"
+	confirmBtn.addEventListener("click", async () => {
+		const response = await deleteUser(userId)
+		if (response.message === "User deleted !") {
+			init()
+		}
+	})
 	document.querySelector(".modal-container").appendChild(confirmBtn)
-
-	console.log(userId)
 }
