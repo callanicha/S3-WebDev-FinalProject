@@ -5,8 +5,19 @@ import "./style.css"
 import { handleData } from "./utils/handleData"
 import { modalComp } from "./components/modalComp"
 
-const usersArray = await fetchUsers()
-// check if this is not an empty array
-if (usersArray.length) handleData(usersArray)
+export async function init() {
+	app.innerText = "loading ..."
+	const usersArray = await fetchUsers()
 
-app.appendChild(modalComp())
+	if (!usersArray.length) {
+		app.innerText = "Something went very very wrong ..." + usersArray
+		return
+	}
+
+	// check if this is not an empty array
+	if (usersArray.length) handleData(usersArray)
+
+	app.appendChild(modalComp())
+}
+
+init()
