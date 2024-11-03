@@ -5,6 +5,7 @@ import { usersData } from "../components/usersData"
 import { usersActions } from "../components/userActions"
 
 export function handleData(usersArray) {
+	app.innerText = ""
 	usersArray.forEach((user) => {
 		const cardArticle = cardComponent()
 		cardArticle.setAttribute("userId", user.id)

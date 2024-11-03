@@ -10,7 +10,11 @@ export async function init() {
 	const usersArray = await fetchUsers()
 
 	if (!usersArray.length) {
-		app.innerText = "Something went very very wrong ..." + usersArray
+		app.innerText = "Something went very very wrong ... " + usersArray
+		const img = new Image()
+		img.classList.add("error-img")
+		img.src = "./assets/offline.jpg"
+		app.appendChild(img)
 		return
 	}
 

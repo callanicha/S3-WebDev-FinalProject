@@ -62,6 +62,13 @@ h1 {
   color: #888;
 }
 
+.error-img {
+  max-width: 310px;
+  display: block;
+  margin: auto;
+  mix-blend-mode: lighten;
+}
+
 button {
   border-radius: 4px;
   border: 1px solid transparent;

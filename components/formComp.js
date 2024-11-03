@@ -32,6 +32,11 @@ export const formComp = (firstName, lastName, userId) => {
 				".modal-container"
 			).innerText = `${response.firstName} ${response.lastName}`
 			document.querySelector(".modal-overlay").classList.toggle("show")
+
+			// wait a couple of sec
+			setTimeout(() => {
+				document.querySelector(".modal-overlay").classList.toggle("show")
+			}, 1500)
 		}
 	})
 
