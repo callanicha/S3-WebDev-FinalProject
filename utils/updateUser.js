@@ -14,8 +14,8 @@ export async function updateUser(firstName, lastName, userId) {
 
 		if (!res.ok) throw new Error("Error with the connection")
 		const data = await res.json()
-		console.log(data);
-		
+		// console.log(data);
+
 		return data
 	} catch (error) {
 		console.log(error)
